@@ -37,6 +37,6 @@ def load(input_file, output_file):
     # Close file
     file.close()
 
-    file = open(output_file, 'w')
+    file = open(output_file, 'w+')
     file.write('\n'.join(output_text))
     file.close()
