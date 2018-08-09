@@ -40,8 +40,7 @@ This code challenge was developed in Python. Using PyScaffold to setup a quick e
 
 	>> python setup.py develop
 
-4 - By the instructions, the drawing tool reads commands from a text file, and deliver the output in another text file.
-	By default, input and output files are in files folder:
+4 - By the instructions, the drawing tool reads commands from a text file, and deliver the output in another text file. By default, input and output files are in files folder:
 
 	- Input file: files/input/default.txt
 
@@ -51,8 +50,6 @@ This code challenge was developed in Python. Using PyScaffold to setup a quick e
 
 	>> python src/drawing_challenge/skeleton.py [-h] [--version] [-in [input]] [-out [output]] [-v] [-vv]
 
-6 - This project has unit test coverage close to the 80%, mainly focused on the expected results per the input commands. 
-	Run the test using:
+6 - This project has unit test coverage close to the 80%, mainly focused on the expected results per the input commands. Run the test using:
 
 	>> python setup.py test
-
