@@ -42,3 +42,5 @@ cover/*
 MANIFEST
 
 .DS_Store
+
+files/output/*.*
