@@ -12,11 +12,13 @@ import sys
 from setuptools import setup
 
 # Add here console scripts and other entry points in ini-style format
-entry_points = {
+entry_points = """
+{
     'console_scripts': [
        'drawing_by_diego = drawing_challenge.skeleton:run'
     ]
 }
+"""
 
 
 def setup_package():
