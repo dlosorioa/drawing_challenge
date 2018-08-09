@@ -17,33 +17,19 @@ Note: This skeleton file can be safely removed if not needed!
 """
 from __future__ import division, print_function, absolute_import
 
+import time 
+
 import argparse
 import sys
 import logging
 
-from drawing_challenge import __version__
+from drawing_challenge import __version__, huge
 
 __author__ = "Diego Osorio"
 __copyright__ = "Diego Osorio"
 __license__ = "mit"
 
 _logger = logging.getLogger(__name__)
-
-
-def fib(n):
-    """Fibonacci example function
-
-    Args:
-      n (int): integer
-
-    Returns:
-      int: n-th Fibonacci number
-    """
-    assert n > 0
-    a, b = 1, 1
-    for i in range(n-1):
-        a, b = b, a+b
-    return a
 
 
 def parse_args(args):
@@ -62,10 +48,24 @@ def parse_args(args):
         action='version',
         version='drawing_challenge {ver}'.format(ver=__version__))
     parser.add_argument(
-        dest="n",
-        help="n-th Fibonacci number",
-        type=int,
-        metavar="INT")
+        '-in',
+        '--input',
+        dest="input",
+        nargs='?',
+        default="files/input/default.txt",
+        help="Input file",
+        type=str,
+        metavar="input")
+    parser.add_argument(
+        '-out',
+        '--output',
+        dest="output",
+        nargs='?',
+        default="files/output/default.txt",
+        help="Output file",
+        type=str,
+        metavar="output")
+
     parser.add_argument(
         '-v',
         '--verbose',
@@ -102,9 +102,7 @@ def main(args):
     """
     args = parse_args(args)
     setup_logging(args.loglevel)
-    _logger.debug("Starting crazy calculations...")
-    print("The {}-th Fibonacci number is {}".format(args.n, fib(args.n)))
-    _logger.info("Script ends here")
+    huge.drawing.draw.load(args.input, args.output)
 
 
 def run():

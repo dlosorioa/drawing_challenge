@@ -12,12 +12,11 @@ import sys
 from setuptools import setup
 
 # Add here console scripts and other entry points in ini-style format
-entry_points = """
-[console_scripts]
-# script_name = drawing_challenge.module:function
-# For example:
-# fibonacci = drawing_challenge.skeleton:run
-"""
+entry_points = {
+    'console_scripts': [
+       'drawing_by_diego = drawing_challenge.skeleton:run'
+    ]
+}
 
 
 def setup_package():

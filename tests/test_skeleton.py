@@ -2,16 +2,16 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from drawing_challenge.skeleton import fib
+from drawing_challenge.skeleton import main
+from drawing_challenge import huge
 
 __author__ = "Diego Osorio"
 __copyright__ = "Diego Osorio"
 __license__ = "mit"
 
 
-def test_fib():
-    assert fib(1) == 1
-    assert fib(2) == 1
-    assert fib(7) == 13
-    with pytest.raises(AssertionError):
-        fib(-10)
+
+def test_main(mocker):
+	mocker.patch.object(huge.drawing.draw, 'load') 
+	main(['-in', 'input.txt', '-out', 'output.txt'])
+	huge.drawing.draw.load.assert_called_with('input.txt', 'output.txt')
